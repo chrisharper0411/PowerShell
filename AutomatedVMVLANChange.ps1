@@ -25,7 +25,7 @@ Do {
 Remove-Variable rtn
 $rtn = Test-Connection -ComputerName $W701 -Count 2 -BufferSize 16 -Quiet                                                   # Test's the network connection against a VM to see if still on network
 echo "Still Pinging VM"
-#echo $rtn                                                                                                                   # Prints status update on screen                                                                                                    
+#echo $rtn                                                                                                                  # Prints status update on screen                                                                                                    
 }
 
 While ($rtn -match ‘True’)                                                                                                  # When the variable for the Test connection returns a negative output this kicks off the below changes
