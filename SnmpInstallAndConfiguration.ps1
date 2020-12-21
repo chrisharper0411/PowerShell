@@ -5,18 +5,24 @@
 # Updated       :- NA                                                                                                              #
 # Version       :- 0.1                                                                                                             #
 # License       :- MIT                                                                                                             #
-# Notes         :- Requires -RunAsAdministrator                                                                                    #
+# Notes         :-                                                                                   #
 ####################################################################################################################################
 
-$Hosts = Get-Content "C:\Users\014372\Desktop\PowershellScripts\Hosts.txt"
-$MonitoringNode = "10.207.16.54" # Your SNMP Monioring Node (IP or DNS name) 
-$CommunityString = "winsnmp" # Your community string configured with Monitoring node.
+# Defines Global Variables
+$Hosts = Get-Content "C:\Users\014372.ENSCO\Desktop\PowershellScripts\Hosts.txt"
+
 
 # Loop to target multiple hosts
-foreach ($h in $hosts)                                                                                                                                                                 # Run these commands in all Host servers
+foreach ($h in $hosts)                                                                                                                                                            
 {
-    echo $h
-    Invoke-Command -ComputerName $h -ScriptBlock {
+
+echo $h
+
+Invoke-Command -ComputerName $h -ScriptBlock {
+    
+# Defines local variables
+$MonitoringNode = "10.207.16.54" # Your SNMP Monioring Node (IP or DNS name) 
+$CommunityString = 'winsnmp' # Your community string configured with Monitoring node.
 
 # Configure SNMP service
 function configure_SNMP {
@@ -50,12 +56,14 @@ If ($snmp_stat.Installed -ne "True") {
   configure_SNMP $MonitoringNode $CommunityString
 
 }
+
 ElseIf ($snmp_stat.Installed -eq "True") {
 
   Write-Host "SNMP Services Already Installed `n"
   configure_SNMP $MonitoringNode $CommunityString
 
 }
+
 Else {
 
   Write-Host "SNMP Configuration Failed.!"
