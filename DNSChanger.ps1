@@ -21,9 +21,9 @@ echo $h
 Invoke-Command -ComputerName $h -ScriptBlock {
     
 # Defines local variables
-$PrimaryServer = 
-$SecondaryServer = 
-$TertiaryServer = "10.207.16.54"    
+#$PrimaryServer = 
+#$SecondaryServer = 
+$TertiaryServer = "10.165.16.20"    
 
 # Configure DNS on Network Connections
 function configure_DNS {
