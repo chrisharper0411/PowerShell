@@ -1,5 +1,5 @@
 ####################################################################################################################################
-# Description   :- Powershell script to gather the default gatewa for multiple hosts.                                              #
+# Description   :- Powershell script to gather the default gateway for multiple hosts.                                             #
 # Author        :- Chris Harper                                                                                                    #
 # Created       :- 30/03/2022                                                                                                      #
 # Updated       :- NA                                                                                                              #
