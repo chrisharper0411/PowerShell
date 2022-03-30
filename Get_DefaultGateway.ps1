@@ -23,3 +23,5 @@ Invoke-Command -ComputerName $h -ScriptBlock {
 Get-NetIPConfiguration | Foreach IPv4DefaultGateway
 
 }
+
+}
